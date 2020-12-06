@@ -46,7 +46,7 @@ include '../conexion/conexion.php';
     <div class="list-group list-group-flush">
         <a href="informes.php" class="list-group-item list-group-item-action bg-light">Informes</a>
         <a href="clientes.php" class="list-group-item list-group-item-action bg-light">Clientes</a>
-        <a href="empresas.php" class="list-group-item list-group-item-action bg-light">Empresas</a>
+        <a href="empleados.php" class="list-group-item list-group-item-action bg-light">empleados</a>
         <a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
         <a href="preguntas.php" class="list-group-item list-group-item-action bg-light">Preguntas</a>
         <a href="sitio.php" class="list-group-item list-group-item-action bg-light">Sitio Turistico</a>
@@ -103,7 +103,7 @@ include '../conexion/conexion.php';
     </nav>
 
     <div class="container-fluid">
-        <h1 class="mt-4">Empresar Registradas</h1>
+        <h1 class="mt-4">Empleados</h1>
         <div class="mt-4">
             <table class="table table-hover">
                 <thead class="thead">

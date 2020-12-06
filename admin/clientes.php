@@ -16,7 +16,7 @@ include '../conexion./conexion.php';
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Administrador Portal Abejorral</title>
+        <title>Administrador Gitsot</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -24,8 +24,6 @@ include '../conexion./conexion.php';
 
         <!-- Custom styles for this template -->
         <link href="simple-sidebar.css" rel="stylesheet">
-
-        <link href="../css/style.css" rel="stylesheet">
 
         <!-- Sweet alerts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -40,12 +38,12 @@ include '../conexion./conexion.php';
 
             <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">Abejorral
+                <div class="sidebar-heading">Gitsot
                 </div>
                 <div class="list-group list-group-flush">
                     <a href="informes.php" class="list-group-item list-group-item-action bg-light">Informes</a>
                     <a href="clientes.php" class="list-group-item list-group-item-action bg-light">Clientes</a>
-                    <a href="empresas.php" class="list-group-item list-group-item-action bg-light">Empresas</a>
+                    <a href="empleados.php" class="list-group-item list-group-item-action bg-light">Empleados</a>
                     <a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
                     <a href="preguntas.php" class="list-group-item list-group-item-action bg-light">Preguntas</a>
                     <a href="sitio" class="list-group-item list-group-item-action bg-light">Sitio</a>
@@ -110,34 +108,31 @@ include '../conexion./conexion.php';
                     <th>Identificación</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
-                    <th>Fecha de nacimiento</th>
                     <th>Celular</th>
-                    <th>Municipio</th>
-                    <th>Departamento</th>
                     <th>Dirección</th>
-                    <th>Correo</th>
+                    <th>Ciudad</th>
+                    <th>Sexo</th>
+                    <th>correo</th>
                     <th></th>
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT `tblcliente`.`Id_Cliente`, `tblcliente`.`Nombre`, `tblcliente`.`Apellidos`, `tblcliente`.`Fecha_Nacimiento`, `tblcliente`.`Cel`, `tblmunicipios`.`nombre` AS `Municipio`, `tbldepartamentos`.`nombre` AS `Departamento`, `tblcliente`.`Direccion`, `tblcliente`.`Correo`
-                FROM `tblcliente` 
-                    LEFT JOIN `tblmunicipios` ON `tblcliente`.`id_Municipio` = `tblmunicipios`.`id_Municipio` 
-                    LEFT JOIN `tbldepartamentos` ON `tblmunicipios`.`Id_Departamento` = `tbldepartamentos`.`Id_Departamento`;");
+                $sel = $conn ->query("SELECT `tblcliente`.`id_cliente`, `tblcliente`.`nombres`, `tblcliente`.`apellidos`, `tblcliente`.`celular`, `tblcliente`.`direccion`, `tblcliente`.`ciudad`, `tblcliente`.`departamento`, `tblcliente`.`sexo`, `tblcliente`.`correo`
+                FROM `tblcliente`;");
                     $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
                     $cont++;
                 ?>
                 <tr>
-                    <td><?php echo $fila['Id_Cliente'] ?></td>
-                    <td><?php echo $fila['Nombre'] ?></td>
-                    <td><?php echo $fila['Apellidos'] ?></td>
-                    <td><?php echo $fila['Fecha_Nacimiento'] ?></td>
-                    <td><?php echo $fila['Cel'] ?></td>
-                    <td><?php echo $fila['Municipio'] ?></td>
-                    <td><?php echo $fila['Departamento'] ?></td>
-                    <td><?php echo $fila['Direccion'] ?></td>
-                    <td><?php echo $fila['Correo'] ?></td>
+                    <td><?php echo $fila['id_cliente'] ?></td>
+                    <td><?php echo $fila['nombres'] ?></td>
+                    <td><?php echo $fila['apellidos'] ?></td>
+                    <td><?php echo $fila['celular'] ?></td>
+                    <td><?php echo $fila['direccion'] ?></td>
+                    <td><?php echo $fila['ciudad'] ?></td>
+                    <td><?php echo $fila['departamento'] ?></td>
+                    <td><?php echo $fila['sexo'] ?></td>
+                    <td><?php echo $fila['correo'] ?></td>
                     <td><button type="button" class="btn btn-admin" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Actualizar</button></td>
 
                     <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Cliente']?>)">ELIMINAR</a></td>
