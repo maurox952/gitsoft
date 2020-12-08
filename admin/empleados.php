@@ -208,13 +208,7 @@ include '../conexion/conexion.php';
                                     id="ingresar">Actualizar</button>
                             </td>
                             <td>
-                                <button
-                                    type="button"
-                                    class="btn btn-admin"
-                                    data-toggle="modal"
-                                    data-target="#modal<?php echo $cont; ?>"
-                                    id="ingresar">Eliminar</button>
-                            </td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['id_empleado']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
                 </tr>
                 <?php } ?>
             </table>
@@ -245,6 +239,33 @@ include '../conexion/conexion.php';
                         $("#wrapper").toggleClass("toggled");
                     });
                 </script>
+
+
+            <!-- pregunta antes de eliminar sweat alert -->
+            <script type="text/javascript">
+            function preguntar(id){
+            Swal
+                .fire({
+                    title: "¿Eliminar empleado??",
+                    text: "recuerde, que tambien le borrara las credenciales de acceso",
+                    icon: 'error',            
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar",
+                })
+                .then(resultado => {
+                    if (resultado.value) {
+                        // Hicieron click en "Sí"
+                        //console.log("*se elimina la venta*");
+                        window.location.href="controlador/eliminar_empleado.php?id_empleado="+id
+                    } else {
+                        // Dijeron que no
+                        console.log("*NO se elimina*");
+                    }
+                });
+
+            }
+        </script>
 
             </body>
 
