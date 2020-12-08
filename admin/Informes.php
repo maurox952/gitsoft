@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <title>Gitsot</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -29,15 +29,15 @@
 
             <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">Abejorral
+                <div class="sidebar-heading">Gitsot
                 </div>
                 <div class="list-group list-group-flush">
                     <a href="informes.php" class="list-group-item list-group-item-action bg-light">Informes</a>
                     <a href="clientes.php" class="list-group-item list-group-item-action bg-light">Clientes</a>
-                    <a href="empresas.php" class="list-group-item list-group-item-action bg-light">Empresas</a>
-                    <a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
+                    <a href="empresas.php" class="list-group-item list-group-item-action bg-light">Empleados</a>
+                    <!--<a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
                     <a href="preguntas.php" class="list-group-item list-group-item-action bg-light">Preguntas</a>
-                    <a href="sitio.php" class="list-group-item list-group-item-action bg-light">Sitio Turistico</a>
+                    <a href="sitio.php" class="list-group-item list-group-item-action bg-light">Sitio Turistico</a> -->
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->

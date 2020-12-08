@@ -13,7 +13,7 @@ include '../conexion/conexion.php';
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <title>Administrador Gitsot</title>
 
         <!-- Bootstrap core CSS -->
         <link
@@ -41,15 +41,15 @@ include '../conexion/conexion.php';
 
 <!-- Sidebar -->
 <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">Abejorral
+    <div class="sidebar-heading">Gitsot
     </div>
     <div class="list-group list-group-flush">
         <a href="informes.php" class="list-group-item list-group-item-action bg-light">Informes</a>
         <a href="clientes.php" class="list-group-item list-group-item-action bg-light">Clientes</a>
-        <a href="empleados.php" class="list-group-item list-group-item-action bg-light">empleados</a>
-        <a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
+        <a href="empleados.php" class="list-group-item list-group-item-action bg-light">Empleados</a>
+        <!-- <a href="productos.php" class="list-group-item list-group-item-action bg-light">Productos</a>
         <a href="preguntas.php" class="list-group-item list-group-item-action bg-light">Preguntas</a>
-        <a href="sitio.php" class="list-group-item list-group-item-action bg-light">Sitio Turistico</a>
+        <a href="sitio.php" class="list-group-item list-group-item-action bg-light">Sitio Turistico</a> -->
     </div>
 </div>
 <!-- /#sidebar-wrapper -->
@@ -107,38 +107,38 @@ include '../conexion/conexion.php';
         <div class="mt-4">
             <table class="table table-hover">
                 <thead class="thead">
-                    <th>Código empresa</th>
-                    <th>Rut</th>
-                    <th>Nombre</th>
+                    <th>Identificación</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
                     <th>Celular</th>
+                    <th>Fecha Nacimiento</th>
                     <th>Córreo</th>
-                    <th>Municipio</th>
+                    <th>Cargo</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
                     <th>Departamento</th>
-                    <th>Dirección</th>
-                    <th>Latitud</th>
-                    <th>Longitud</th>
+                    <th>Sexo</th>
                     <th></th>
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT `tblempresa`.`Cod_Empresa`, `tblempresa`.`RUT_Empresa`, `tblempresa`.`Nombre`, `tblempresa`.`Cel`, `tblempresa`.`Telefono`, `tblempresa`.`Correo`, `tblmunicipios`.`nombre` as 'municipio', `tbldepartamentos`.`nombre` as 'departamento', `tblempresa`.`Direccion`, `tblempresa`.`Latitud`, `tblempresa`.`Longitud`
-                FROM `tblempresa` 
-                    LEFT JOIN `tblmunicipios` ON `tblempresa`.`Id_Municipio` = `tblmunicipios`.`id_Municipio` 
-                    LEFT JOIN `tbldepartamentos` ON `tblmunicipios`.`Id_Departamento` = `tbldepartamentos`.`Id_Departamento`;");
+                $sel = $conn ->query("SELECT `tblempleado`.`id_empleado`, `tblempleado`.`nombres`, `tblempleado`.`apellidos`, `tblempleado`.`celular`, `tblempleado`.`fecha_nacimiento`, `tblempleado`.`correo`, `tblcargo`.`nombre`, `tblempleado`.`direccion`, `tblempleado`.`ciudad`, `tblempleado`.`departamento`, `tblempleado`.`sexo`
+                FROM `tblempleado` 
+                    LEFT JOIN `tblcargo` ON `tblempleado`.`id_cargo` = `tblcargo`.`id_cargo`;");
                 while ($fila = $sel -> fetch_assoc()) {
                 ?>
                 <tr>
-                    <td><?php echo $fila['Cod_Empresa'] ?></td>
-                    <td><?php echo $fila['RUT_Empresa'] ?></td>
-                    <td><?php echo $fila['Nombre'] ?></td>
-                    <td><?php echo $fila['Cel'] ?></td>
-                    <td><?php echo $fila['Telefono'] ?></td>
-                    <td><?php echo $fila['Correo'] ?></td>
-                    <td><?php echo $fila['municipio'] ?></td>
+                    <td><?php echo $fila['id_empleado'] ?></td>
+                    <td><?php echo $fila['nombres'] ?></td>
+                    <td><?php echo $fila['apellidos'] ?></td>
+                    <td><?php echo $fila['celular'] ?></td>
+                    <td><?php echo $fila['fecha_nacimiento'] ?></td>
+                    <td><?php echo $fila['correo'] ?></td>
+                    <td><?php echo $fila['nombre'] ?></td>
+                    <td><?php echo $fila['direccion'] ?></td>
+                    <td><?php echo $fila['ciudad'] ?></td>
                     <td><?php echo $fila['departamento'] ?></td>
-                    <td><?php echo $fila['Direccion'] ?></td>
-                    <td><?php echo $fila['Latitud'] ?></td>
-                    <td><?php echo $fila['Longitud'] ?></td>
+                    <td><?php echo $fila['sexo'] ?></td>
                     
                     <td>
                                 <button
