@@ -163,8 +163,8 @@ include '../conexion/conexion.php';
         </div>
 
 
-</div>
-<!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#page-content-wrapper -->
 
 </div>
 <!-- /#wrapper -->
