@@ -25,25 +25,27 @@
 
 <body class="bg-login">
 
-    <section>
+    <section class="bg-login">
+
         <div class="container m-0 p-0 col-12">
-            <div class="col-12 col-md-6 col-lg-6 row">
+
+            <div class="col-12 col-md-6 col-lg-6 bg-formulario">
                 <form action="login.php" method="post">
-                    <div class="logo col-12">
+                    <div class="logo text-center col-12">
                         <a href="../../index.php">
-                            <img src="../../img/logo.png" alt="">
+                            <img src="../../img/icono.png" alt="">
                         </a>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="#">Correo</label>
-                            <input type="email" class="form-control" name="correo">
+                            <input type="email" class="login-form" name="correo">
                         </div>
 
                         <div class="form-group col-12">
                             <label for="">Contraseña</label>
-                            <input type="password" class="form-control" name="contr">
+                            <input type="password" class="login-form" name="contr">
                         </div>
                     </div>
 
@@ -55,6 +57,7 @@
 
                     <div class="align-items-center text-center">
                         <button type="submit" class="btn btn-color">Ingresar</button>
+                        <button type="submit" class="btn btn-color">Registrarse</button>
                     </div>
                 </form>
             </div>
