@@ -102,6 +102,65 @@ include '../conexion/conexion.php';
         </div>
     </nav>
 
+    <main class="col-12">
+        <div class="container">
+            <div>
+            <h1>Registrar Empleado</h1>
+            </div>
+            <div>
+            <form action="controlador/ingresar_empleado.php" name="add_form" method="POST">
+                <labe>Identificación</label>
+                    <input type="text" class="form-control" name="identificacion">
+                <labe>Nombres</label>
+                    <input type="text" class="form-control" name="nombres">
+                <labe>Apellidos</label>
+                    <input type="text" class="form-control" name="apellidos">
+                <labe>Celular</label>
+                    <input type="text" class="form-control" name="celular">
+                <labe>Fecha Nacimiento</label>
+                    <input type="date" class="form-control" name="fecha_nacimiento">
+                <labe>Cargo</label>
+                        <select name="cargo" class="form-control"><option value="0" selected="selected" required>
+                        <?php 
+                            $sel = $conn ->query("SELECT * FROM tblcargo");
+                            while ($row=$sel->fetch_array()) {
+                        ?>
+                        <option value="<?php echo $row[0] ?>"><?php echo $row[1] ?></option>
+                        <?php	
+                            }
+                        ?> </select>
+                <labe>Direccion</label>
+                    <input type="text" class="form-control" name="direccion">
+                <labe>Ciudad</label>
+                    <input type="text" class="form-control" name="ciudad">
+                <labe>Departamento</label>
+                    <input type="text" class="form-control" name="departamento">
+                <labe>sexo</label>
+                    <select class="form-control" name="sexo">
+                        <option value="Hombre">Hombre</option>
+                        <option value="Hombre">Mujer</option>
+                        <option value="Hombre">Otro</option>
+                    </select>
+                <fieldset class="fieldset">
+                    <legend class="legend">Datos de Usuario</legend>
+                    <label class="label-frm">Correo</label><br>
+                    <input type="email" name="correo" class="form-control" placeholder="Ingrese el Correo">
+                    <br><br>
+                    <label class="label-frm">Contraseña</label><br>
+                    <input type="password" name="contrasena" class="form-control" placeholder="Ingrese la Contraseña">
+                    <br><br>
+                    <label class="label-frm">Confirmar Contraseña</label><br>
+                    <input type="password" name="com-contrasena"class="form-control" placeholder="Confirme la contraseña">
+                </fieldset>
+
+                
+                <input type="submit" value="Enviar" class="btn btn-primary">
+            </form>
+            </div>
+        </div>
+
+    </main>
+
     <div class="container-fluid">
         <h1 class="mt-4">Empleados</h1>
         <div class="mt-4">
