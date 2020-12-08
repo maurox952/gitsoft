@@ -1,0 +1,50 @@
+* {
+    max-width: 100%;
+    margin: 0;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+}
+
+
+/* Utilidades */
+
+.aa a {
+    text-decoration: none;
+    color: #00ACF8;
+}
+
+.btn-color {
+    background-color: #00ACF8;
+    color: #ffffff;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.3rem 2rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-color:hover {
+    cursor: pointer;
+    background-color: #A0E93A;
+    color: #ffffff;
+}
+
+.btn-invi {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+}
+
+
+/* Login */
