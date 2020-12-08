@@ -1,4 +1,4 @@
 <?php
-$conn = new mysqli('localhost','root','','gitsoft');
+$conn = new mysqli('localhost','root','','gisot');
 $URL = "http://localhost/gitsoft/";
 ?>
