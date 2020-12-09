@@ -17,6 +17,11 @@
   font-size: 1.2rem;
 }
 
+.tabla{
+  overflow: scroll;
+  width:99%;
+}
+
 #sidebar-wrapper .list-group {
   width: 15rem;
 }
