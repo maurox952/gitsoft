@@ -163,7 +163,7 @@ include '../conexion/conexion.php';
 
     <div class="container-fluid">
         <h1 class="mt-4">Empleados</h1>
-        <div class="mt-4">
+        <div class="mt-4 tabla">
             <table class="table table-hover">
                 <thead class="thead">
                     <th>Identificación</th>
@@ -181,10 +181,12 @@ include '../conexion/conexion.php';
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT `tblempleado`.`id_empleado`, `tblempleado`.`nombres`, `tblempleado`.`apellidos`, `tblempleado`.`celular`, `tblempleado`.`fecha_nacimiento`, `tblempleado`.`correo`, `tblcargo`.`nombre`, `tblempleado`.`direccion`, `tblempleado`.`ciudad`, `tblempleado`.`departamento`, `tblempleado`.`sexo`
-                FROM `tblempleado` 
-                    LEFT JOIN `tblcargo` ON `tblempleado`.`id_cargo` = `tblcargo`.`id_cargo`;");
+                $sel = $conn ->query("SELECT tblempleado.id_empleado, tblempleado.nombres, tblempleado.apellidos, tblempleado.celular, tblempleado.fecha_nacimiento, tblempleado.correo, tblcargo.nombre, tblempleado.direccion, tblempleado.ciudad, tblempleado.departamento, tblempleado.sexo
+                FROM tblempleado 
+                    LEFT JOIN tblcargo ON tblempleado.id_cargo = tblcargo.id_cargo;");
+                    $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
+                    $cont++;
                 ?>
                 <tr>
                     <td><?php echo $fila['id_empleado'] ?></td>
@@ -210,6 +212,63 @@ include '../conexion/conexion.php';
                             <td>
                             <td><a href="#" onclick="preguntar(<?php echo $fila['id_empleado']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
                 </tr>
+
+                <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Editar Empleado</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+
+                                            <form action="controlador/actualizar_empleado.php?id_empleado=<?php echo $fila['id_empleado']?>" method="post">
+                                                <label hidden>Identificación:</label>
+                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['id_empleado'] ?>" hidden>
+                                                <label>Nombre cliente:</label>
+                                                <input type="text" class="form-control" name="nombres" value="<?php echo $fila['nombres'] ?>">
+                                                <label>Apellido cliente:</label>
+                                                <input type="text" class="form-control" name="apellidos" value="<?php echo $fila['apellidos']?>">
+                                                <label>Celular:</label>
+                                                <input type="text" class="form-control" name="celular" value="<?php echo $fila['celular']?>">
+                                                <label>Fecha de nacimiento:</label>
+                                                <input type="text" class="form-control" name="fecha_naci" value="<?php echo $fila['fecha_nacimiento']?>">
+                                                <label>Correo:</label>
+                                                <input type="text" class="form-control" name="correo" value="<?php echo $fila['correo']?>">
+                                                <labe>Cargo:</label>
+                                                <select name="cargo" class="form-control">
+                                                    <?php 
+                                                        $sql = $conn ->query("SELECT * FROM tblcargo");
+                                                        while ($row=$sql->fetch_array()) {
+                                                    ?>
+                                                    <option value="<?php echo $row[0] ?>"><?php echo $row[1] ?></option>
+                                                    <?php
+                                                        }
+                                                    ?> 
+                                                    </select>
+                                                <label>Dirección:</label>
+                                                <input type="text" class="form-control" name="direccion" value="<?php echo $fila['direccion']?>">
+                                                <label>Ciudad:</label>
+                                                <input type="text" class="form-control" name="ciudad" value="<?php echo $fila['ciudad']?>">
+                                                <label>Departamento:</label>
+                                                <input type="text" class="form-control" name="departamento" value="<?php echo $fila['departamento']?>">
+                                                <label>Sexo:</label>
+                                                <input type="text" class="form-control" name="sexo" value="<?php echo $fila['sexo']?>">
+                                                
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-admin">Guardar</button>
+                                                    <button type="button" class="btn btn-admin" data-dismiss="modal">Cancelar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                 <?php } ?>
             </table>
             </div>
