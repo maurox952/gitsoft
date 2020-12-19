@@ -117,14 +117,14 @@ include '../conexion./conexion.php';
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT `tblcliente`.`id_cliente`, `tblcliente`.`nombres`, `tblcliente`.`apellidos`, `tblcliente`.`celular`, `tblcliente`.`direccion`, `tblcliente`.`ciudad`, `tblcliente`.`departamento`, `tblcliente`.`sexo`, `tblcliente`.`correo`
+                $sel = $conn ->query("SELECT `tblcliente`.`id`, `tblcliente`.`nombres`, `tblcliente`.`apellidos`, `tblcliente`.`celular`, `tblcliente`.`direccion`, `tblcliente`.`ciudad`, `tblcliente`.`departamento`, `tblcliente`.`sexo`, `tblcliente`.`correo`
                 FROM `tblcliente`;");
                     $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
                     $cont++;
                 ?>
                 <tr>
-                    <td><?php echo $fila['id_cliente'] ?></td>
+                    <td><?php echo $fila['id'] ?></td>
                     <td><?php echo $fila['nombres'] ?></td>
                     <td><?php echo $fila['apellidos'] ?></td>
                     <td><?php echo $fila['celular'] ?></td>
@@ -135,7 +135,7 @@ include '../conexion./conexion.php';
                     <td><?php echo $fila['correo'] ?></td>
                     <td><button type="button" class="btn btn-admin" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Actualizar</button></td>
 
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Cliente']?>)">ELIMINAR</a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['id']?>)">ELIMINAR</a></td>
 
 
                 </tr>
@@ -154,9 +154,9 @@ include '../conexion./conexion.php';
                                         <div class="modal-body">
 
 
-                                            <form action="controlador/actualizar_cliente.php?id_cliente=<?php echo $fila['id_cliente']?>" method="post">
+                                            <form action="controlador/actualizar_cliente.php?id_cliente=<?php echo $fila['id']?>" method="post">
                                                 <label>Identificación:</label>
-                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['id_cliente'] ?>">
+                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['id'] ?>">
                                                 <label>Nombre cliente:</label>
                                                 <input type="text" class="form-control" name="nombres" value="<?php echo $fila['nombres'] ?>">
                                                 <label>Apellido cliente:</label>
