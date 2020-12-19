@@ -26,7 +26,7 @@ if ($sql==TRUE){
     $sql2=$conn->query("INSERT INTO tbllogin (correo, contraseña, id) VALUES ('$correo', '$contrasena', '$identificacion')");
     if($sql2==TRUE){
         echo "<script> alert('Correcto')</script>";
-        echo "<script> location.href='../empleado.php'; </script>";
+        echo "<script> location.href='../empleados.php'; </script>";
 
     }else{
         $sql3=$conn->query("DELETE FROM tblempleado WHERE id='$identificacion'");

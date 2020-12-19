@@ -210,7 +210,7 @@ include '../conexion/conexion.php';
                                     id="ingresar">Actualizar</button>
                             </td>
                             <td>
-                            <td><a href="#" onclick="preguntar(<?php echo $fila['id_empleado']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['id']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
                 </tr>
 
                 <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
@@ -225,9 +225,9 @@ include '../conexion/conexion.php';
                                         <div class="modal-body">
 
 
-                                            <form action="controlador/actualizar_empleado.php?id_empleado=<?php echo $fila['id_empleado']?>" method="post">
+                                            <form action="controlador/actualizar_empleado.php?id=<?php echo $fila['id']?>" method="post">
                                                 <label hidden>Identificación:</label>
-                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['id_empleado'] ?>" hidden>
+                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['id'] ?>" hidden>
                                                 <label>Nombre cliente:</label>
                                                 <input type="text" class="form-control" name="nombres" value="<?php echo $fila['nombres'] ?>">
                                                 <label>Apellido cliente:</label>
@@ -316,7 +316,7 @@ include '../conexion/conexion.php';
                     if (resultado.value) {
                         // Hicieron click en "Sí"
                         //console.log("*se elimina la venta*");
-                        window.location.href="controlador/eliminar_empleado.php?id_empleado="+id
+                        window.location.href="controlador/eliminar_empleado.php?id="+id
                     } else {
                         // Dijeron que no
                         console.log("*NO se elimina*");
