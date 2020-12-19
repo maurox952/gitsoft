@@ -44,6 +44,10 @@ h3 {
     font-size: 1.3rem;
 }
 
+.titulo-cursiva {
+    font-family: 'Sofia', cursive;
+}
+
 
 /* Login */
 
@@ -74,4 +78,56 @@ h3 {
     height: 40%;
     padding: 0.5rem;
     outline: none;
+}
+
+
+/* Quienes somos */
+
+.bg-quienes {
+    background-image: url(.././img/pasantia.jpg);
+    background-position: center -180px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 1rem;
+}
+
+.bg-quienes h2 {
+    font-size: 4rem;
+    line-height: 40px;
+}
+
+@media only screen and (min-width: 1500px) {
+    .bg-quienes {
+        background-position: center -280px;
+    }
+}
+
+@media only screen and (max-width: 270px) {
+    .bg-quienes h2 {
+        font-size: 3rem;
+        line-height: 30px;
+    }
+}
+
+.texto-quienes {
+    background-color: #00acf8;
+    height: auto;
+    padding-top: 1rem;
+    color: #fff;
+}
+
+.texto-quienes h3 {
+    margin-top: 1rem;
+}
+
+.texto-quienes p {
+    text-align: justify;
+    font-size: 1rem;
+    margin-top: -2rem;
 }
