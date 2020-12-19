@@ -181,15 +181,15 @@ include '../conexion/conexion.php';
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT tblempleado.id_empleado, tblempleado.nombres, tblempleado.apellidos, tblempleado.celular, tblempleado.fecha_nacimiento, tblempleado.correo, tblcargo.nombre, tblempleado.direccion, tblempleado.ciudad, tblempleado.departamento, tblempleado.sexo
-                FROM tblempleado 
-                    LEFT JOIN tblcargo ON tblempleado.id_cargo = tblcargo.id_cargo;");
+                $sel = $conn ->query("SELECT `tblempleado`.`id`, `tblempleado`.`nombres`, `tblempleado`.`apellidos`, `tblempleado`.`celular`, `tblempleado`.`fecha_nacimiento`, `tblempleado`.`correo`, `tblcargo`.`nombre`, `tblempleado`.`direccion`, `tblempleado`.`ciudad`, `tblempleado`.`departamento`, `tblempleado`.`sexo`
+                FROM `tblempleado` 
+                    LEFT JOIN `tblcargo` ON `tblempleado`.`id_cargo` = `tblcargo`.`id_cargo`;");
                     $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
                     $cont++;
                 ?>
                 <tr>
-                    <td><?php echo $fila['id_empleado'] ?></td>
+                    <td><?php echo $fila['id'] ?></td>
                     <td><?php echo $fila['nombres'] ?></td>
                     <td><?php echo $fila['apellidos'] ?></td>
                     <td><?php echo $fila['celular'] ?></td>
