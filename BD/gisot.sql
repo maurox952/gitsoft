@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2020 a las 13:51:21
+-- Tiempo de generación: 19-12-2020 a las 16:30:19
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -40,7 +40,7 @@ CREATE TABLE `tblcargo` (
 --
 
 CREATE TABLE `tblcliente` (
-  `id_cliente` varchar(30) NOT NULL,
+  `id` varchar(30) NOT NULL,
   `nombres` varchar(100) DEFAULT NULL,
   `apellidos` varchar(100) DEFAULT NULL,
   `celular` varchar(20) DEFAULT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `tblcliente` (
 --
 
 CREATE TABLE `tblempleado` (
-  `id_empleado` varchar(30) NOT NULL,
+  `id` varchar(30) NOT NULL,
   `nombres` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `celular` varchar(20) DEFAULT NULL,
@@ -82,8 +82,7 @@ CREATE TABLE `tblempleado` (
 CREATE TABLE `tbllogin` (
   `correo` varchar(100) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `id_empleado` varchar(30) DEFAULT NULL,
-  `id_cliente` varchar(30) DEFAULT NULL
+  `id` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -125,16 +124,16 @@ ALTER TABLE `tblcargo`
 -- Indices de la tabla `tblcliente`
 --
 ALTER TABLE `tblcliente`
-  ADD PRIMARY KEY (`id_cliente`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fk_tblcliente_tblrol1_idx` (`id_rol`);
 
 --
 -- Indices de la tabla `tblempleado`
 --
 ALTER TABLE `tblempleado`
-  ADD PRIMARY KEY (`id_empleado`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `correo_UNIQUE` (`correo`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id_empleado`),
+  ADD UNIQUE KEY `id_UNIQUE` (`id`),
   ADD KEY `fk_tblempleado_tblcargo_idx` (`id_cargo`),
   ADD KEY `fk_tblempleado_table11_idx` (`id_rol`);
 
@@ -143,8 +142,7 @@ ALTER TABLE `tblempleado`
 --
 ALTER TABLE `tbllogin`
   ADD PRIMARY KEY (`correo`),
-  ADD KEY `fk_tbllogin_tblempleado1_idx` (`id_empleado`),
-  ADD KEY `fk_tbllogin_tblcliente1_idx` (`id_cliente`);
+  ADD KEY `fk_tbllogin_tblempleado1_idx` (`id`);
 
 --
 -- Indices de la tabla `tblnotificaciones`
@@ -202,14 +200,14 @@ ALTER TABLE `tblempleado`
 -- Filtros para la tabla `tbllogin`
 --
 ALTER TABLE `tbllogin`
-  ADD CONSTRAINT `fk_tbllogin_tblcliente1` FOREIGN KEY (`id_cliente`) REFERENCES `tblcliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbllogin_tblempleado1` FOREIGN KEY (`id_empleado`) REFERENCES `tblempleado` (`id_empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tbllogin_tblcliente1` FOREIGN KEY (`id`) REFERENCES `tblcliente` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbllogin_tblempleado1` FOREIGN KEY (`id`) REFERENCES `tblempleado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tblnotificaciones`
 --
 ALTER TABLE `tblnotificaciones`
-  ADD CONSTRAINT `fk_tblnotificaciones_tblempleado1` FOREIGN KEY (`id_empleado`) REFERENCES `tblempleado` (`id_empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tblnotificaciones_tblempleado1` FOREIGN KEY (`id_empleado`) REFERENCES `tblempleado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
