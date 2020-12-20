@@ -42,8 +42,14 @@
             min-height: 100vh;
         }
 
-        .titulo{
+        .titulo1{
             color: #00acf8;
+            margin: 2rem;
+        }
+
+        .titulo2{
+            color: #FFFFFF;
+            margin: 2rem; 
         }
 
         .tarjeta{
@@ -51,6 +57,13 @@
             height: 60vh;
             padding: 1rem;
             background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .tarjeta2{
+            border-radius: 0.5rem;
+            height: 80vh;
+            padding: 1rem;
+            background-color: #FFFFFF;
         }
 
         .titulo-tarjeta{
@@ -63,6 +76,26 @@
 
         .img-tarjeta{
             margin-bottom: 1rem;
+        }
+
+        .boton{
+            background-color: #0149B6;
+            text-decoration: none;
+            color: #FFFFFF;
+            width: 125px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 6px 0 0 #0198B0;
+        }
+
+        .boton:hover{
+            background-color: #145FD0;
+        }
+
+        .soluciones{
+            background-color: #0149B6;
+            padding: 1rem;
         }
     </style>
 
@@ -90,8 +123,9 @@
     <div class="banner">
         <img src="img/logo-com.png" alt="Logo">
     </div>
+
     <section class="container text-center mt-5">
-        <div class="titulo">
+        <div class="titulo1">
             <h2>Nuestro modelo de negocio</h2>
         </div>
         <div class="row">
@@ -102,6 +136,7 @@
                     </div>
                     <div class="texto-tarjeta">
                         <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                        <a href="#"><button class="boton">Leer más</button></a>
                     </div>
                 </div>
             </div>
@@ -122,6 +157,66 @@
                     </div>
                     <div class="texto-tarjeta">
                         <p>Se generan restricciones normativas, técnicas y comerciales frente a las cuales se hace insuficiente la gestión del riesgo para mitigar, reducir o eliminar situaciones indeseadas como multas y sanciones que ponen en peligro la continuidad del negocio. Es por ello que las empresas requieren de personal profesional interno o externo que acompañe la gestión que exigen el gobierno a través de todas sus normas de obligatorio cumplimiento, servicios que suelen brindarse en el mercado por separado y para cada área en Salud y seguridad en el trabajo (SG-SST), Ambiental (SGA) y Buenas prácticas de manufactura y fabricación (BPM-BPF), solución que es atendida por Gisot Consultores al integrar, diseñar, implementar, mantener y mejorar las áreas antes descritas en un mismo servicio de asesoría y consultoría de forma eficiente y eficaz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center mt-5 soluciones">
+        <div class="titulo2">
+            <h2>Soluciones normativas</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/manos.png" alt="Manos" width="60%">
+                    </div>
+                    <div class="titulo-tarjeta">
+                        <h4>Se enfoca en</h4>
+                    </div>
+                    <div class="texto-tarjeta">
+                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/manos.png" alt="Manos" width="60%">
+                    </div>
+                    <div class="titulo-tarjeta">
+                        <h4>Se enfoca en</h4>
+                    </div>
+                    <div class="texto-tarjeta">
+                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/manos.png" alt="Manos" width="60%">
+                    </div>
+                    <div class="titulo-tarjeta">
+                        <h4>Se enfoca en</h4>
+                    </div>
+                    <div class="texto-tarjeta">
+                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/manos.png" alt="Manos" width="60%">
+                    </div>
+                    <div class="titulo-tarjeta">
+                        <h4>Se enfoca en</h4>
+                    </div>
+                    <div class="texto-tarjeta">
+                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
                     </div>
                 </div>
             </div>
