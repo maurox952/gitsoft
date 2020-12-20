@@ -115,6 +115,7 @@
                     <a class="nav-link" href="#">Nuestros servicios</a>
                     <a class="nav-link" href="#">Clientes</a>
                     <a class="nav-link" href="#">Contáctanos</a>
+                    <a class="nav-link" href="vistas/login/cerrar_sesion.php">Cerrar sesion</a>
                 </div>
             </div>
         </div>

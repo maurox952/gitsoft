@@ -17,7 +17,7 @@ $sexo=$_POST['sexo'];
 $correo=$_POST['correo'];
 $contrasena=$_POST['contrasena'];
 
-$sql=$conn->query("INSERT INTO tbllogin (correo, contraseña, id) VALUES ('$correo', '$contrasena', '$identificacion')");
+$sql=$conn->query("INSERT INTO tbllogin (correo, contraseña, id_rol) VALUES ('$correo', '$contrasena', 3)");
 
 if ($sql==TRUE){
     $sql2=$conn->query("INSERT INTO tblcliente (id, nombres, apellidos, celular, direccion, ciudad, departamento, id_rol, sexo, correo) VALUES ('$identificacion', '$nombres', '$apellidos', '$celular', '$direccion', '$ciudad', '$departamento', 3, '$sexo', '$correo')");
