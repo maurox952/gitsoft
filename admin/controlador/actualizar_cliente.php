@@ -2,7 +2,7 @@
 
 include '../../conexion/conexion.php';
 
-$id=$_GET['id_cliente'];
+$id=$_GET['id'];
 $nombre=$_POST['nombres'];
 $apellido=$_POST['apellidos'];
 $cel=$_POST['celular'];
@@ -13,7 +13,7 @@ $sexo=$_POST['sexo'];
 $correo=$_POST['correo'];
 
 
-$up = $conn -> query("UPDATE tblcliente SET nombres='$nombre', apellidos='$apellido', celular='$cel', direccion='$direccion', ciudad='$ciudad', departamento='$departamento', sexo='$sexo',  correo='$correo'  WHERE id_cliente='$id'");
+$up = $conn -> query("UPDATE tblcliente SET nombres='$nombre', apellidos='$apellido', celular='$cel', direccion='$direccion', ciudad='$ciudad', departamento='$departamento', sexo='$sexo',  correo='$correo'  WHERE id='$id'");
 
 if($up==TRUE){
     echo "<script> alert('EPA') </script>";

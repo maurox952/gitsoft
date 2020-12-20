@@ -9,8 +9,6 @@ $identificacion=$_POST['identificacion'];
 $nombres=$_POST['nombres'];
 $apellidos=$_POST['apellidos'];
 $celular=$_POST['celular'];
-$fecha_naci=$_POST['fecha_nacimiento'];
-$cargo=$_POST['cargo'];
 $direccion=$_POST['direccion'];
 $ciudad=$_POST['ciudad'];
 $departamento=$_POST['departamento'];
@@ -21,11 +19,8 @@ $contrasena=$_POST['contrasena'];
 
 $sql=$conn->query("INSERT INTO tbllogin (correo, contraseña, id) VALUES ('$correo', '$contrasena', '$identificacion')");
 
-
-
-
 if ($sql==TRUE){
-    $sql2=$conn->query("INSERT INTO tblempleado (id, nombres, apellidos, celular, fecha_nacimiento, correo, id_cargo, direccion, ciudad, departamento, id_rol, sexo) VALUES ('$identificacion', '$nombres', '$apellidos', '$celular', '$fecha_naci', '$correo', '$cargo', '$direccion', '$ciudad', '$departamento', 2 , '$sexo')");
+    $sql2=$conn->query("INSERT INTO tblcliente (id, nombres, apellidos, celular, direccion, ciudad, departamento, id_rol, sexo, correo) VALUES ('$identificacion', '$nombres', '$apellidos', '$celular', '$direccion', '$ciudad', '$departamento', 3, '$sexo', '$correo')");
     if($sql2==TRUE){
         echo "<script> alert('Correcto')</script>";
         echo "<script> location.href='../empleados.php'; </script>";
