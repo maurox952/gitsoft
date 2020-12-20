@@ -1,3 +1,6 @@
+<?php 
+include '../../conexion/conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,7 +33,7 @@
         <div class="container m-0 p-0 col-12">
 
             <div class="col-12 col-md-6 col-lg-6 bg-formulario">
-                <form action="login.php" method="post">
+                <form action="ingresar_login.php" method="post">
                     <div class="logo text-center col-12">
                         <a href="../../index.php">
                             <img src="../../img/icono.png" alt="">
@@ -45,7 +48,7 @@
 
                         <div class="form-group col-12">
                             <label for="">Contraseña</label>
-                            <input type="password" class="login-form" name="contr">
+                            <input type="password" class="login-form" name="password">
                         </div>
                     </div>
 
@@ -72,6 +75,41 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+
+<?php
+    if(isset($_GET['msg'])){
+        if($_GET['msg']==1){
+    ?>
+
+    <script>
+        Swal.fire('Sesión cerrada correctamente')
+    </script>
+
+    <?php
+        }else{
+            if($_GET['msg']==2){
+    ?>
+
+    <script>
+        Swal.fire('Datos incorrectos')
+    </script>
+    
+    <?php
+        }else{
+            if($_GET['msg']==3){
+    ?>
+
+    <script>
+        Swal.fire('Registro existoso')
+    </script>
+
+    <?php
+            }
+            }
+        }
+    }
+    ?>
 
 </body>
 

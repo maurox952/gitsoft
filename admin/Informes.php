@@ -1,3 +1,18 @@
+<?php
+
+include '../conexion/conexion.php';
+
+    session_start();
+    if (!isset($_SESSION['rol'])){
+        echo "<script> location.href='../index.php'; </script>";
+    }else{
+        if($_SESSION['rol']!=1){
+            echo "<script> location.href='../index.php'; </script>";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,25 +81,7 @@
                                     <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">inicio2</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="navbarDropdown"
-                                    role="button"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="../index.php">inicio</a>
-                                    <a class="dropdown-item" href="#">otra direccion</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">otra direccion</a>
-                                </div>
+                                <a class="nav-link" href="../vistas/login/cerrar_sesion.php">Cerrar sesion</a>
                             </li>
                         </ul>
                     </div>

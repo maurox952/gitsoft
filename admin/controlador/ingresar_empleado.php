@@ -19,7 +19,7 @@ $sexo=$_POST['sexo'];
 $correo=$_POST['correo'];
 $contrasena=$_POST['contrasena'];
 
-$sql=$conn->query("INSERT INTO tbllogin (correo, contraseña, id) VALUES ('$correo', '$contrasena', '$identificacion')");
+$sql=$conn->query("INSERT INTO tbllogin (correo, contraseña, id_rol) VALUES ('$correo', '$contrasena', 2)");
 
 
 
