@@ -54,20 +54,28 @@
 
         .tarjeta{
             border-radius: 0.5rem;
-            height: 60vh;
+            height: 500px;
             padding: 1rem;
+            margin: 0.5rem;
             background-color: rgba(255, 255, 255, 0.5);
         }
 
         .tarjeta2{
             border-radius: 0.5rem;
-            height: 80vh;
+            height: 550px;
+            margin: 0.5rem;
             padding: 1rem;
             background-color: #FFFFFF;
         }
 
+        .tarjeta2 img{
+            border-right: 4px solid #0149B6;
+            border-left: 4px solid #0149B6;
+            box-shadow: 0 4px 6px 1px gray;
+        }
+
         .titulo-tarjeta{
-            color: #00acf8;
+            color: #00ACF8;
         }
 
         .texto-tarjeta{
@@ -76,6 +84,14 @@
 
         .img-tarjeta{
             margin-bottom: 1rem;
+        }
+
+        .img-tarjeta2{
+            margin-bottom: 1rem;
+        }
+
+        .img-tarjeta2 img{
+            width: 200px;
         }
 
         .boton{
@@ -93,9 +109,14 @@
             background-color: #145FD0;
         }
 
-        .soluciones{
+        .bg-azul{
             background-color: #0149B6;
             padding: 1rem;
+        }
+
+        .overflow{
+            height: 100%;
+            overflow: scroll;
         }
     </style>
 
@@ -130,7 +151,7 @@
             <h2>Nuestro modelo de negocio</h2>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="tarjeta">
                     <div class="titulo-tarjeta">
                         <h4>Se enfoca en</h4>
@@ -141,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="tarjeta">
                     <div class="img-tarjeta">
                         <img src="img/manos.png" alt="Manos" width="60%">
@@ -151,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="tarjeta">
                     <div class="titulo-tarjeta">
                         <h4>Continuamente</h4>
@@ -164,60 +185,109 @@
         </div>
     </section>
 
-    <section class="text-center mt-5 soluciones">
+    <section class="text-center mt-5 bg-azul">
         <div class="titulo2">
             <h2>Soluciones normativas</h2>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="tarjeta2">
-                    <div class="img-tarjeta">
-                        <img src="img/manos.png" alt="Manos" width="60%">
+                    <div class="img-tarjeta2">
+                        <img src="img/tarjeta1.jpg" alt="Manos" width="60%">
                     </div>
                     <div class="titulo-tarjeta">
-                        <h4>Se enfoca en</h4>
+                        <h4> Salud y seguridad en el trabajo</h4>
                     </div>
                     <div class="texto-tarjeta">
-                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                        <p>Regulado por el Ministerio de Trabajo bajo el Decreto 1072 de 2015 y la Resolución 0312 de 2019 .</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="tarjeta2">
-                    <div class="img-tarjeta">
-                        <img src="img/manos.png" alt="Manos" width="60%">
+                    <div class="img-tarjeta2">
+                        <img src="img/tarjeta2.jpg" alt="Manos" width="60%">
                     </div>
                     <div class="titulo-tarjeta">
-                        <h4>Se enfoca en</h4>
+                        <h4>Gestión Ambiental</h4>
                     </div>
                     <div class="texto-tarjeta">
-                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                        <p>Regulado por el Ministerio de Ambiente y Desarrollo Sostenible bajo el Decreto 1076 de 201</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="tarjeta2">
-                    <div class="img-tarjeta">
-                        <img src="img/manos.png" alt="Manos" width="60%">
+                    <div class="img-tarjeta2">
+                        <img src="img/tarjeta3.jpg" alt="Manos" width="60%">
                     </div>
                     <div class="titulo-tarjeta">
-                        <h4>Se enfoca en</h4>
+                        <h4>Buenas Prácticas de Manufactura y Fabricación</h4>
                     </div>
                     <div class="texto-tarjeta">
-                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                        <p>Regulado por el Ministerio de Salud,  Protección Social y el INVIMA bajo la Resolución 2674 de 2013 y Resolución 683 de 2012.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="tarjeta2">
-                    <div class="img-tarjeta">
-                        <img src="img/manos.png" alt="Manos" width="60%">
+                    <div class="img-tarjeta2">
+                        <img src="img/tarjeta4.jpg" alt="Manos" width="60%">
                     </div>
                     <div class="titulo-tarjeta">
-                        <h4>Se enfoca en</h4>
+                        <h4>Normas Técnicas Colombianas NTC ISO</h4>
                     </div>
                     <div class="texto-tarjeta">
-                        <p>Generar una experiencia de respaldo y tranquilidad a empresarios y cultura organizacional en colaboradores por medio de acompañamiento permanente con el objetivo de integrar las áreas al interior de la Compañía y los Sistemas de Gestión, facilitando el entendimiento normativo.</p>
+                        <p>No son de obligatorio cumplimiento, sin embargo, son un diferencial en el mercado para aquellas empresas que se certifiquen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container text-center mt-5">
+        <div class="titulo1">
+            <h2>Testimonios</h2>
+        </div>
+    </section>
+
+    <section class="text-center mt-5 bg-azul">
+        <div class="titulo2">
+            <h2>Sobre nuestra compañia</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/equipo1.jpeg" alt="Manos" width="60%">
+                    </div>
+                    <div class="texto-tarjeta">
+                        <ul>
+                            <li>Minimizamos reprocesos y enfocamos esfuerzos.</li>
+                            <li>Trabajamos en equipo enfocados en el cumplimiento de objetivos.</li>
+                            <li>Fomentamos y mantenemos la cultura empresarial.</li>
+                            <li>Formamos, capacitamos y sensibilizamos el personal.</li>
+                            <li>Aportamos a la viabilidad financiera y sostenibilidad empresarial.</li>
+                            <li>Prevenimos factores de riesgo ante posibles sanciones.</li>
+                        </ul>
+                        <a href="#"><button class="boton">Leer más</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="tarjeta2">
+                    <div class="img-tarjeta">
+                        <img src="img/equipo2.jpeg" alt="Manos" width="60%">
+                    </div>
+                    <div class="texto-tarjeta">
+                        <p>Entregamos a nuestros aliados asesoría y consultoría eficiente, a través de nuestro equipo de profesionales idóneos y certificados, brindando a la gerencia y a su equipo la toma de decisiones oportunas alineadas a la visión estratégica del negocio, la integración de las áreas, la consecución de nuevos clientes y la permanencia en el mercado, en pro de la prevención de factores de riesgo a posibles sanciones en general y de organismos de control, aportando a la viabilidad financiera y la sostenibilidad empresarial.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="tarjeta2">
+                    <div class="texto-tarjeta overflow">
+                        <a class="twitter-timeline" href="https://twitter.com/gisotconsultor?ref_src=twsrc%5Etfw">Tweets by gisotconsultor</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </div>
@@ -228,9 +298,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="my-3 my-lg-0 text-lg-center text-center">
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://twitter.com/gisotconsultor" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.facebook.com/gisotconsultor"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/gisotconsultor/"><i class="fab fa-instagram" target="_blank"></i></a>
                 </div>
             </div>
         </div>
