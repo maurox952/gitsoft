@@ -55,16 +55,6 @@
             min-height: 100vh;
         }
 
-        .titulo1{
-            color: #00acf8;
-            margin: 2rem;
-        }
-
-        .titulo2{
-            color: #FFFFFF;
-            margin: 2rem; 
-        }
-
         .tarjeta{
             border-radius: 0.5rem;
             height: 500px;
@@ -82,9 +72,7 @@
         }
 
         .tarjeta2 img{
-            border-right: 4px solid #0149B6;
-            border-left: 4px solid #0149B6;
-            box-shadow: 0 4px 6px 1px gray;
+            border: 4px solid silver;
         }
 
         .titulo-tarjeta{
@@ -141,7 +129,7 @@
     </div>
 
     <section class="container text-center mt-5">
-        <div class="titulo1">
+        <div class="text-center my-4" style="color: #00acf8;">
             <h2>Nuestro modelo de negocio</h2>
         </div>
         <div class="row">
@@ -180,14 +168,58 @@
     </section>
 
     <section class="text-center mt-5 bg-azul">
-        <div class="titulo2">
+        <div class="text-center my-4" style="color: #FFFFFF;">
+            <h2>Soluciones normativas</h2>
+        </div>
+        <div class="container">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/tarjeta1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/tarjeta1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/tarjeta1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/tarjeta1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center mt-5 bg-azul">
+        <div class="text-center my-4" style="color: #FFFFFF;">
             <h2>Soluciones normativas</h2>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="tarjeta2">
                     <div class="img-tarjeta2">
-                        <img src="img/tarjeta1.jpg" alt="Manos" width="60%">
+                        <img src="img/tarjeta1.jpg" alt="Manos" width="60%" height="">
                     </div>
                     <div class="titulo-tarjeta">
                         <h4> Salud y seguridad en el trabajo</h4>
@@ -240,13 +272,13 @@
     </section>
 
     <section class="container text-center mt-5">
-        <div class="titulo1">
+        <div class="text-center my-4" style="color: #00acf8;">
             <h2>Testimonios</h2>
         </div>
     </section>
 
     <section class="text-center mt-5 bg-azul">
-        <div class="titulo2">
+        <div class="text-center my-4" style="color: #FFFFFF;">
             <h2>Sobre nuestra compañia</h2>
         </div>
         <div class="row">
