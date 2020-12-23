@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,7 +110,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#">Incio</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo $URL ?>">Incio</a>
                     <a class="nav-link" href="<?php echo $URL ?>vistas/quienes/quienes_somos.php">Quiénes somos</a>
                     <a class="nav-link" href="#">Nuestros servicios</a>
                     <a class="nav-link" href="#">Clientes</a>

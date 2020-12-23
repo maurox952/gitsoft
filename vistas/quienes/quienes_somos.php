@@ -1,3 +1,15 @@
+<?php
+    include('../../conexion/conexion.php');
+
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include '../includes/nav_index.php';
+        }else{
+            if($_SESSION['rol'] ==1 ){
+                include '../includes/nav_admin.php';
+            }
+        }
+?>
 <!DOCTYPE html>
 <html lang="es">
 
