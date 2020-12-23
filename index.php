@@ -1,3 +1,16 @@
+<?php
+    include "conexion/conexion.php";
+
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include 'vistas/includes/nav_index.php';
+        }else{
+            if($_SESSION['rol'] ==1 ){
+                include 'vistas/includes/nav_admin.php';
+            }
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,25 +136,6 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="bg-index">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/logo-text.png" alt="Logo" width="100" height="50"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#">Incio</a>
-                    <a class="nav-link" href="#">Quiénes somos</a>
-                    <a class="nav-link" href="#">Nuestros servicios</a>
-                    <a class="nav-link" href="#">Clientes</a>
-                    <a class="nav-link" href="#">Contáctanos</a>
-                    <a class="nav-link" href="vistas/login/cerrar_sesion.php">Cerrar sesion</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
     <div class="banner">
         <img src="img/logo-com.png" alt="Logo">
     </div>
