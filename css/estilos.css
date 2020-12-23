@@ -81,6 +81,18 @@ h3 {
 }
 
 
+/* Index */
+
+.contenedor {
+    margin: 0;
+    width: 100%;
+}
+
+.bg-verde {
+    background-color: #A0E93A;
+}
+
+
 /* Quienes somos */
 
 .bg-quienes {
