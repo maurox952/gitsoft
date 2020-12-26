@@ -32,95 +32,6 @@
 
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
-        <style type="text/css">
-            .banner {
-                padding: 1rem;
-                width: 100%;
-                height: 50vh;
-                box-shadow: 0 0.5px 30px 5px #888888;
-                background-color: #FFFFFF;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .banner img {
-                height: 100%;
-            }
-            
-            .bg-index {
-                background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251, 0.045) 0%, rgba(251, 251, 251, 0.045) 50%, rgba(229, 229, 229, 0.045) 50%, rgba(229, 229, 229, 0.045) 100%), radial-gradient(circle at 66% 97%, rgba(36, 36, 36, 0.045) 0%, rgba(36, 36, 36, 0.045) 50%, rgba(46, 46, 46, 0.045) 50%, rgba(46, 46, 46, 0.045) 100%), radial-gradient(circle at 86% 7%, rgba(40, 40, 40, 0.045) 0%, rgba(40, 40, 40, 0.045) 50%, rgba(200, 200, 200, 0.045) 50%, rgba(200, 200, 200, 0.045) 100%), radial-gradient(circle at 15% 16%, rgba(99, 99, 99, 0.045) 0%, rgba(99, 99, 99, 0.045) 50%, rgba(45, 45, 45, 0.045) 50%, rgba(45, 45, 45, 0.045) 100%), radial-gradient(circle at 75% 99%, rgba(243, 243, 243, 0.045) 0%, rgba(243, 243, 243, 0.045) 50%, rgba(37, 37, 37, 0.045) 50%, rgba(37, 37, 37, 0.045) 100%), linear-gradient(90deg, rgb(245, 255, 230), rgb(231, 248, 255));
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                min-height: 100vh;
-            }
-            
-            .tarjeta {
-                border-radius: 0.5rem;
-                height: 500px;
-                padding: 1rem;
-                margin: 0.5rem;
-                background-color: rgba(255, 255, 255, 0.5);
-            }
-            
-            .tarjeta2 {
-                border-radius: 0.5rem;
-                height: 550px;
-                margin: 0.5rem;
-                padding: 1rem;
-                background-color: #FFFFFF;
-            }
-            
-            .tarjeta2 img {
-                border: 4px solid silver;
-            }
-            
-            .titulo-tarjeta {
-                color: #00ACF8;
-            }
-            
-            .texto-tarjeta {
-                font-size: 15px;
-            }
-            
-            .img-tarjeta {
-                margin-bottom: 1rem;
-            }
-            
-            .img-tarjeta2 {
-                margin-bottom: 1rem;
-            }
-            
-            .img-tarjeta2 img {
-                width: 200px;
-            }
-            
-            .boton {
-                background-color: #0149B6;
-                text-decoration: none;
-                color: #FFFFFF;
-                width: 125px;
-                height: 50px;
-                border-radius: 10px;
-                border: none;
-                box-shadow: 0 6px 0 0 #0198B0;
-            }
-            
-            .boton:hover {
-                background-color: #145FD0;
-            }
-            
-            .bg-azul {
-                background-color: #0149B6;
-                padding: 1rem;
-            }
-            
-            .overflow {
-                height: 100%;
-                overflow: scroll;
-            }
-        </style>
 
         <link rel="stylesheet" href="css/estilos.css">
     </head>
@@ -149,7 +60,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="tarjeta">
-                        <div class="img-tarjeta">
+                        <div class="img-tarjeta mb-1">
                             <img src="img/manos.png" alt="Manos" width="60%">
                         </div>
                         <div class="texto-tarjeta">
@@ -182,7 +93,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="tarjeta2">
-                        <div class="img-tarjeta2">
+                        <div class="img-tarjeta2 mb-1">
                             <img src="img/tarjeta1.jpg" alt="Manos" width="60%" height="">
                         </div>
                         <div class="titulo-tarjeta">
