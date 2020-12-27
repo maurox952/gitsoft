@@ -44,15 +44,15 @@
                                 <h3>Contáctenos</h3>
                             </div>
                             <form action="enviar_contacto.php" name="add_form" method="post" enctype="multipart/form-data">
-                                    <label for="">Nombres: </label>
+                                    <label class="mt-3">Nombres: </label>
                                     <input class="form-control" type="text" name="nombres" placeholder="Ingrese un Nombre"> 
-                                    <label for="">Correo: </label>
+                                    <label class="mt-3">Correo: </label>
                                     <input class="form-control" type="email" name="correo" placeholder="Ingrese un Correo"> 
-                                    <label for="">Celular: </label>
+                                    <label class="mt-3">Celular: </label>
                                     <input class="form-control" type="tel" name="celular" placeholder="Ingrese un numero de celular">
-                                    <label for="">Asunto: </label>
+                                    <label class="mt-3">Asunto: </label>
                                     <input class="form-control" type="text" name="asunto" placeholder="Ingrese un Asunto"> 
-                                    <label for="">Comentario</label>
+                                    <label class="mt-3">Comentario</label>
                                     <textarea class="form-control" name="comentario" rows="10" placeholder="Ingrese un comentario"></textarea>
                                 <div class="text-center">
                                     <input type="submit" class="btn btn-color" value="Enviar">
@@ -63,31 +63,31 @@
                     <div class="col mt-5">
                         <div>
                             <i class="far fa-envelope"></i> Correo
-                        </div>
-                        <div>
-                            <a href="directoradministrativo@gisot.com.co">directoradministrativo@gisot.com.co</a>
+                            <p>directoradministrativo@gisot.com.co</p>
                         </div>
                         <div class="mt-3">
                             <i class="fas fa-phone-alt"></i> Telefono
-                        </div>
-                        <div>
                             <p>+573007800142</p>
                         </div>
                         <div class="mt-3">
                             <i class="fas fa-map-marker-alt"></i> Dirección
-                        </div>
-                        <div>
                             <p>Envigado y Rionegro, Antioquia, Colombia
                             Vereda la Convención, Kilometro 2,2 vía Aeropuerto – Llanogrande. Oficina 205. </p>
                         </div>
                         <div class="mt-5">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.649600524243!2d-75.435459!3d6.154214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x55a99dfeb9f3a409!2sPortanova%20Center!5e0!3m2!1ses-419!2sus!4v1609012038820!5m2!1ses-419!2sus" width="600" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.649600524243!2d-75.435459!3d6.154214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x55a99dfeb9f3a409!2sPortanova%20Center!5e0!3m2!1ses-419!2sus!4v1609012038820!5m2!1ses-419!2sus" width="600" height="368" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                     
                     </div>
                 </div>
             </div>
-            
+
+            <div class="container">
+                <div>
+                    <img src="../../img/bg-contacto.jpg" width="100%">
+                </div>
+
+            </div>
         </main>
     </section>
 
@@ -123,5 +123,9 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <?php
+        include '../includes/footer.php';
+    ?>
 </body>
 </html>
