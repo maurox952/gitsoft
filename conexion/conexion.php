@@ -1,7 +1,7 @@
 <?php
 
 $conn = new mysqli('localhost','root','','gisot');
-$URL = "http://localhost/gitsoft/";
+$URL = "http://localhost/GIT/gitsoft/";
 
     //Samir
 //$conn = new mysqli('localhost','root','','gisot','33065');

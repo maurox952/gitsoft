@@ -38,7 +38,7 @@
                     <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nuestros servicios</a>
+                    <a class="nav-link" href="<?php echo $URL ?>/vistas/servicios/servicios.php">Nuestros servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Clientes</a>
