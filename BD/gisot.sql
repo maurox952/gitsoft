@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2020 a las 16:30:19
+-- Tiempo de generación: 27-12-2020 a las 23:04:10
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -32,6 +32,14 @@ CREATE TABLE `tblcargo` (
   `nombre` varchar(50) DEFAULT NULL,
   `descripcion` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tblcargo`
+--
+
+INSERT INTO `tblcargo` (`id_cargo`, `nombre`, `descripcion`) VALUES
+(1, 'jefe', '4155152'),
+(2, 'jefe dual', '5dfs');
 
 -- --------------------------------------------------------
 
@@ -73,6 +81,13 @@ CREATE TABLE `tblempleado` (
   `sexo` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tblempleado`
+--
+
+INSERT INTO `tblempleado` (`id`, `nombres`, `apellidos`, `celular`, `fecha_nacimiento`, `correo`, `id_cargo`, `direccion`, `ciudad`, `departamento`, `id_rol`, `sexo`) VALUES
+('5555', '55555', '5555', '3322555655859', '2020-12-09', 'gisot@gmail.com', 1, 'Calle 21 #22-17', 'Rionegro', 'Antioquia', 2, 'Hombre');
+
 -- --------------------------------------------------------
 
 --
@@ -81,9 +96,16 @@ CREATE TABLE `tblempleado` (
 
 CREATE TABLE `tbllogin` (
   `correo` varchar(100) NOT NULL,
-  `password` varchar(100) DEFAULT NULL,
-  `id` varchar(30) DEFAULT NULL
+  `contraseña` varchar(100) DEFAULT NULL,
+  `id_Rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbllogin`
+--
+
+INSERT INTO `tbllogin` (`correo`, `contraseña`, `id_Rol`) VALUES
+('gisot@gmail.com', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -96,7 +118,7 @@ CREATE TABLE `tblnotificaciones` (
   `descripcion` varchar(500) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `estado` varchar(20) DEFAULT NULL,
-  `id_empleado` varchar(30) DEFAULT NULL
+  `id` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -109,6 +131,15 @@ CREATE TABLE `tblrol` (
   `id_rol` int(11) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tblrol`
+--
+
+INSERT INTO `tblrol` (`id_rol`, `descripcion`) VALUES
+(1, 'administrador'),
+(2, 'empleado'),
+(3, 'cliente');
 
 --
 -- Índices para tablas volcadas
@@ -125,7 +156,8 @@ ALTER TABLE `tblcargo`
 --
 ALTER TABLE `tblcliente`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tblcliente_tblrol1_idx` (`id_rol`);
+  ADD KEY `fk_tblcliente_tblrol1_idx` (`id_rol`),
+  ADD KEY `correo` (`correo`);
 
 --
 -- Indices de la tabla `tblempleado`
@@ -142,14 +174,14 @@ ALTER TABLE `tblempleado`
 --
 ALTER TABLE `tbllogin`
   ADD PRIMARY KEY (`correo`),
-  ADD KEY `fk_tbllogin_tblempleado1_idx` (`id`);
+  ADD KEY `id_Rol` (`id_Rol`);
 
 --
 -- Indices de la tabla `tblnotificaciones`
 --
 ALTER TABLE `tblnotificaciones`
   ADD PRIMARY KEY (`id_notificacion`),
-  ADD KEY `fk_tblnotificaciones_tblempleado1_idx` (`id_empleado`);
+  ADD KEY `fk_tblnotificaciones_tblempleado1_idx` (`id`);
 
 --
 -- Indices de la tabla `tblrol`
@@ -165,7 +197,7 @@ ALTER TABLE `tblrol`
 -- AUTO_INCREMENT de la tabla `tblcargo`
 --
 ALTER TABLE `tblcargo`
-  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tblnotificaciones`
@@ -177,7 +209,7 @@ ALTER TABLE `tblnotificaciones`
 -- AUTO_INCREMENT de la tabla `tblrol`
 --
 ALTER TABLE `tblrol`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -187,12 +219,14 @@ ALTER TABLE `tblrol`
 -- Filtros para la tabla `tblcliente`
 --
 ALTER TABLE `tblcliente`
-  ADD CONSTRAINT `fk_tblcliente_tblrol1` FOREIGN KEY (`id_rol`) REFERENCES `tblrol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tblcliente_tblrol1` FOREIGN KEY (`id_rol`) REFERENCES `tblrol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tblogin_ibfk_2` FOREIGN KEY (`correo`) REFERENCES `tbllogin` (`correo`);
 
 --
 -- Filtros para la tabla `tblempleado`
 --
 ALTER TABLE `tblempleado`
+  ADD CONSTRAINT `fk:tblempleado_correo` FOREIGN KEY (`correo`) REFERENCES `tbllogin` (`correo`),
   ADD CONSTRAINT `fk_tblempleado_table11` FOREIGN KEY (`id_rol`) REFERENCES `tblrol` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tblempleado_tblcargo` FOREIGN KEY (`id_cargo`) REFERENCES `tblcargo` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -200,14 +234,13 @@ ALTER TABLE `tblempleado`
 -- Filtros para la tabla `tbllogin`
 --
 ALTER TABLE `tbllogin`
-  ADD CONSTRAINT `fk_tbllogin_tblcliente1` FOREIGN KEY (`id`) REFERENCES `tblcliente` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbllogin_tblempleado1` FOREIGN KEY (`id`) REFERENCES `tblempleado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tbllogin_ibfk_1` FOREIGN KEY (`id_Rol`) REFERENCES `tblrol` (`id_rol`);
 
 --
 -- Filtros para la tabla `tblnotificaciones`
 --
 ALTER TABLE `tblnotificaciones`
-  ADD CONSTRAINT `fk_tblnotificaciones_tblempleado1` FOREIGN KEY (`id_empleado`) REFERENCES `tblempleado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tblnotificaciones_ibfk_1` FOREIGN KEY (`id`) REFERENCES `tblempleado` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

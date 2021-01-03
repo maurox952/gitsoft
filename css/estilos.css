@@ -177,7 +177,7 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 60vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,6 +203,28 @@ h3 {
     }
 }
 
+.caja-quienes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(77, 77, 77, 0.8);
+    padding: 5rem;
+    width: 60%;
+}
+
+.caja-quienes p {
+    text-align: justify;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.caja-quienes hr {
+    height: 5px;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.99);
+}
+
 .texto-quienes {
     background-color: #00acf8;
     height: auto;
@@ -214,8 +236,13 @@ h3 {
     margin-top: 1rem;
 }
 
-.texto-quienes p {
+.reconocimientos {}
+
+.reconocimientos img {
+    width: 80%;
+}
+
+.reconocimientos p {
     text-align: justify;
-    font-size: 1rem;
-    margin-top: -2rem;
+    font-size: 0.9rem;
 }
