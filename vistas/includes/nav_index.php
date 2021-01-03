@@ -14,11 +14,29 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="css/estilos.css">
+    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar-expand-lg bg-white m-0">
+        <div class="row brand bg-white">
+            <div class="col-lg-10 col-sm-12 logo">
+                <a href="<?php echo $URL ?>">
+                    <img src="<?php echo $URL ?>img/logo-horizontal.png" class="m-2" alt="Logo" width="200" height="50">
+                </a>
+            </div>
+            <div class="col-lg-2 col-sm-12 link">
+                <a href="<?php echo $URL ?>/vistas/login/login.php">Iniciar sesión</a>
+            </div>
+        </div>
+        <div class="links">
+            <a aria-current="page" href="<?php echo $URL ?>">Incio</a>
+            <a href="<?php echo $URL ?>vistas/quienes/quienes_somos.php">Quiénes somos</a>
+            <a href="<?php echo $URL ?>/vistas/servicios/servicios.php">Nuestros servicios</a>
+            <a href="#">Clientes</a>
+            <a href="<?php echo $URL ?>/vistas/contactenos/contacto.php">Contáctanos</a>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-sm-3">
             <a class="navbar-brand" href="<?php echo $URL ?>">
                 <img src="<?php echo $URL ?>img/logo-text.png" alt="Logo" width="100" height="50">
@@ -35,7 +53,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>vistas/quienes/quienes_somos.php">Quiénes somos</a>
-                    <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>/vistas/servicios/servicios.php">Nuestros servicios</a>
@@ -51,6 +68,6 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 </body>
 </html>
